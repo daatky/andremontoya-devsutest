@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed on your system:
 To clone the repository, run the following command in your terminal:
 
 ```bash
-git clone https://github.com/yourusername/andremontoya-devsutest.git
+git clone https://github.com/daatky/andremontoya-devsutest
 ```
 
 ### Step 2: Install all the dependencies
