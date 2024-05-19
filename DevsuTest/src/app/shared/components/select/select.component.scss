@@ -1,0 +1,115 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$select-height: calculate(2);
+$small-width: calculate(4);
+$padding-item-select-tb: calculate(0.2);
+$padding-item-select-lr: calculate(0.1);
+
+.select {
+  position: relative;
+  background: var(--white);
+  height: $select-height;
+  display: flex;
+  flex-flow: column;
+  border-radius: calculate(0.3);
+  border: var(--black) solid calculate(0.05);
+  padding: 0 calculate(0.25);
+
+
+  &.not-enable {
+    pointer-events: none !important;
+  }
+
+  &.select-small {
+    width: $small-width;
+  }
+
+  &.select-madium {
+    display: flex;
+    // It's just an example done by me!, to leave more available options for the select component
+  }
+
+  &.select-large {
+    display: flex;
+    // It's just an example done by me!, to leave more available options for the select component
+  }
+
+  .option-selected {
+    display: flex;
+    flex-flow: row;
+    height: $select-height;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: calculate(0.3);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .content {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      font-size: calculate(1);
+      line-height: calculate(1);
+      font-weight: 500;
+    }
+
+    .icon {
+      display: flex;
+      flex: 0 0  auto;
+      font-size: calculate(1.1);
+      line-height: calculate(1.1);
+    }
+
+  }
+
+  .options {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    bottom: $select-height;
+    left: 0;
+    background: var(--white);
+    border: var(--black) solid calculate(0.02);
+    transition: opacity ease 0.2s;
+
+    &.select-small {
+      width: $small-width;
+    }
+
+    &.active {
+      z-index: 100;
+      opacity: 1;
+    }
+
+    .item-select {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $padding-item-select-tb $padding-item-select-lr;
+      user-select: none;
+      transition: background ease 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--gray);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+  }
+
+
+
+}

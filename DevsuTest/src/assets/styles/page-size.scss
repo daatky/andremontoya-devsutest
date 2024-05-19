@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+//PAGE GENERAL SIZE
+$page-width: 100vw;
+$page-height: 100vh;
+$app-bar-height: 5;
+
+@function calculate($dimesion) {
+  @return math.div($page-width * ($dimesion), 100);
+}

@@ -1,0 +1,17 @@
+<div
+  *ngIf="model"
+  [ngClass]="{
+    'modal': true,
+    'show': model.show
+  }"
+>
+  <div class="content">
+    <div class="label">
+      {{ getLabel() }}
+    </div>
+    <div class="options">
+      <app-buttom [model]="buttomCancel"></app-buttom>
+      <app-buttom [model]="buttomConfirm"></app-buttom>
+    </div>
+  </div>
+</div>

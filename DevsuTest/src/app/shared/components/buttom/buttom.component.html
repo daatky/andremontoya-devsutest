@@ -1,0 +1,14 @@
+<div
+  *ngIf="model && model.show"
+  [ngClass]="getClasses()"
+  (click)="execute()"
+>
+  <p>{{ model.text }}</p>
+
+  <div
+    [ngClass]="{
+      'not-enable': true,
+      'show': !model.enable
+    }"
+  ></div>
+</div>

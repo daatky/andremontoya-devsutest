@@ -1,0 +1,57 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$input-width: auto;
+$input-height: calculate(6);
+
+.input {
+  width: $input-width;
+  height: $input-height;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+
+  label {
+    width: $input-width;
+    display: flex;
+    flex-flow: column;
+
+    span {
+      display: flex;
+      width: $input-width;
+      font-size: calculate(1);
+      line-height: calculate(1);
+      font-weight: 450;
+      margin-bottom: calculate(0.2);
+    }
+
+    input {
+      height: calculate(3);
+      font-size: calculate(1);
+      line-height: calculate(1);
+      border: var(--black) solid calculate(0.075);
+      border-radius: calculate(0.30);
+      padding: 0 calculate(0.75);
+      outline: 0;
+      transition: border ease 3s;
+    }
+
+  }
+
+  .error {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calculate(1);
+    color: var(--red);
+    font-size: calculate(0.7);
+    line-height: calculate(0.7);
+    font-weight: 500;
+  }
+
+  &.isError {
+
+    input {
+      border: var(--red) solid calculate(0.075) !important;
+    }
+  }
+}

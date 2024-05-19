@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+mat-icon {
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+:root {
+  --blue-dark: #0D47A1;
+  --shadow-container: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+  --bottom-shadow-container: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+  --yellow: #FFC400;
+  --gray: #F5F5F5;
+  --gray-blue: #f4f6f9;
+  --black: #030303;
+  --black-medium: rgba(0,0,0,0.5);
+  --white: #fff;
+  --red: #BF360C;
+  --semi-black: rgba(0,0,0,0.5);
+}

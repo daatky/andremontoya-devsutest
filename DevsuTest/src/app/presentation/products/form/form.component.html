@@ -1,0 +1,47 @@
+<div class="form">
+  <div class="title">
+    <p>Formulario de registro</p>
+  </div>
+  <div class="inputs">
+    <div class="row">
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('ID')"
+      ></app-input>
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('NAME')"
+      ></app-input>
+    </div>
+    <div class="row">
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('DESCRIPTION')"
+      ></app-input>
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('LOGO')"
+      ></app-input>
+    </div>
+    <div class="row">
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('DATE_RELEASED')"
+      ></app-input>
+      <app-input
+        [className]="'input-tag'"
+        [model]="getInputModelByKey('DATE_REVISION')"
+      ></app-input>
+    </div>
+  </div>
+  <div class="buttoms">
+    <app-buttom
+      [className]="'buttom-tag'"
+      [model]="buttomRestart"
+    ></app-buttom>
+    <app-buttom
+      [className]="'buttom-tag'"
+      [model]="buttomSend"
+    ></app-buttom>
+  </div>
+</div>

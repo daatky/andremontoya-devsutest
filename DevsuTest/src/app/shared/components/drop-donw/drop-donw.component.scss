@@ -1,0 +1,64 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$dropdown-width: auto;
+$options-width: calculate(4);
+
+.dropdown {
+  position: relative;
+  display: flex;
+  width: $dropdown-width;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    display: flex;
+    font-size: calculate(1.3);
+    line-height: calculate(1.3);
+    transition: transform ease 0.2s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+
+  .options {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    top: calculate(0.6);
+    right: calculate(1.3);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity ease 0.2s;
+    box-shadow: var(--bottom-shadow-container);
+
+    &.active {
+      z-index: 100;
+      opacity: 1;
+    }
+
+    .option {
+      background: var(--white);
+      padding: calculate(0.5) calculate(1);
+      box-shadow: var(--bottom-shadow-container);
+      user-select: none;
+      transition: transform ease 0.2s;
+      font-size: calculate(0.8);
+      line-height: calculate(0.8);
+
+      &:hover {
+        cursor: pointer;
+        background: var(--gray-blue);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+    }
+  }
+}

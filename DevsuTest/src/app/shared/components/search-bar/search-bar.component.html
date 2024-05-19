@@ -1,0 +1,11 @@
+<div
+  *ngIf="model && model.show"
+  [ngClass]="{'class': true}"
+  class="searchbar"
+>
+  <input
+    type="text"
+    [(ngModel)]="model.searchValue"
+    placeholder="{{ model.placedolder }}"
+  />
+</div>

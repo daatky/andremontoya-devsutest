@@ -1,0 +1,73 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$buttom-width: fit-content;
+$buttom-height: calculate(3.4);
+$buttom-large-width: calculate(11);
+
+.buttom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none !important;
+  padding: 0 calculate(1);
+  border-radius: calculate(0.5);
+  transition: transform ease 0.2s;
+  position: relative;
+
+  &.default-size {
+    width: $buttom-width !important;
+    height: $buttom-height !important;
+  }
+
+  &.large-size {
+    width: $buttom-large-width !important;
+    height: $buttom-height !important;
+  }
+
+  &.not-enable {
+    cursor: default;
+    pointer-events: none !important;
+  }
+
+  .not-enable {
+    position: absolute;
+    width: 100%;
+    height: $buttom-height;
+    background: rgba(255,255,255,0);
+    z-index: -1;
+    transition: background ease 0.2s;
+    border-radius: calculate(0.5);
+
+    &.show {
+      z-index: 1;
+      background: rgba(255,255,255,0.5);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.btn-default {
+    background-color: var(--gray);
+    color: var(--blue-dark);
+    font-weight: 450;
+  }
+
+  &.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--blue-dark);
+    font-weight: 450;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: calculate(0.9);
+    line-height: calculate(0.9);
+  }
+}

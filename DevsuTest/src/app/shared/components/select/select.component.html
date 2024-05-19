@@ -1,0 +1,24 @@
+<div
+  *ngIf="model && model.show"
+  [ngClass]="getClasses()"
+  (click)="showOptions()"
+>
+  <div class="option-selected">
+    <p class="content">{{ (!model.selectedValue) ? model.placeholder.label : model.selectedValue.label }}</p>
+    <mat-icon class="icon">arrow_drop_down</mat-icon>
+  </div>
+  <div
+    [ngClass]="getOptionsClasses()"
+  >
+    <div
+      *ngFor="let item of model.values;"
+      [ngClass]="{
+        'item-select': true,
+        'selected': (model.selectedValue === item.value)
+      }"
+      (click)="changeValue(item)"
+    >
+      {{ item.label }}
+    </div>
+  </div>
+</div>

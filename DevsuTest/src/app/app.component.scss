@@ -1,0 +1,11 @@
+@import '../assets/styles/page-size.scss';
+
+.main {
+  width: calculate(100);
+  height: calc( 100vh - calculate($app-bar-height) );
+  background-color: var(--gray-blue);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}

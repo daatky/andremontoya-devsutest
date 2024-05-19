@@ -1,0 +1,237 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$view-width: calculate(75);
+$view-height: calculate(35);
+$view-padding-lr: calculate(2);
+$item-width: calc( ($view-width * 1) - ( $view-padding-lr * 2) );
+$table-width: calc($item-width - ( calculate(1.25) * 2 ));
+$tr-height: calculate(3);
+$th-border-bottom-width: calculate(0.06);
+$tr-border-bottom-width: calculate(0.05);
+$logo-width: calculate(2);
+$pagination-height: calculate(3);
+
+.view {
+  display: flex;
+  flex-flow: column;
+  width: $view-width;
+  height: $view-height;
+  padding: 0 calculate(2);
+  overflow-y: hidden;
+  box-sizing: border-box;
+
+  .options {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    width: $item-width;
+    height: fit-content;
+  }
+
+  .table {
+    width: $item-width;
+    margin-top: calculate(1);
+    background-color: var(--white);
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    border-radius: calculate(0.25);
+    padding: calculate(1.25);
+    border-collapse: collapse;
+    overflow: hidden;
+
+    .pagination {
+      display: flex;
+      flex-flow: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: $table-width;
+      height: $pagination-height;
+      padding-top: calculate(0.7);
+
+      .total-records {
+        font-size: calculate(0.8);
+        line-height: calculate(0.8);
+        color: var(--blue-dark);
+        font-weight: 500;
+      }
+
+      .paginate {
+        width: auto;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+
+        .pages {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          align-items: center;
+          margin-right: calculate(1);
+
+          p {
+            font-size: calculate(0.8);
+            line-height: calculate(0.8);
+            margin: 0 calculate(1.2);
+            user-select: none;
+          }
+
+          .icon {
+            font-size: calculate(1.2);
+            line-height: calculate(1.2);
+            user-select: none;
+            pointer-events: none;
+            color: var(--gray);
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:active {
+              transform: scale(0.9);
+            }
+
+            &.enable {
+              color: var(--yellow);
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+
+    table {
+      background: #f3f3f3;
+      width: $table-width;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      overflow: hidden;
+
+      thead {
+        background: var(--gray-blue);
+        width: $table-width;
+        display: flex;
+        flex-flow: column;
+        flex: 0 0 auto;
+
+        tr {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: center;
+          height: $tr-height;
+          box-shadow: var(--bottom-shadow-container);
+
+          th {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: calculate(0.9);
+            line-height: calculate(0.9);
+
+            .icon {
+              font-size: calculate(1.3);
+              line-height: calculate(1.3);
+              color: var(--black-medium);
+              margin-left: calculate(0.4);
+            }
+
+            &:nth-child(1) {
+              width: calc( $table-width * 0.10 );
+            }
+
+            &:nth-child(2) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(3) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(4) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(5) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(6) {
+              width: calc( $table-width * 0.10 );
+            }
+          }
+        }
+      }
+
+      tbody {
+        background: var(--white);
+        display: flex;
+        flex-flow: column;
+        flex: 1 1 auto;
+        overflow-y: auto;
+
+        tr {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: center;
+          min-height: $tr-height;
+          height: fit-content;
+          border-bottom: $tr-border-bottom-width solid var(--gray);
+
+          td {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            font-size: calculate(0.9);
+            line-height: calculate(0.9);
+
+            img {
+              width: $logo-width;
+              height: $logo-width;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+
+            &:nth-child(1) {
+              width: calc( $table-width * 0.10 );
+            }
+
+            &:nth-child(2) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(3) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(4) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(5) {
+              width: calc( $table-width * 0.20 );
+              justify-content: start;
+            }
+
+            &:nth-child(6) {
+              width: calc( $table-width * 0.10 );
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

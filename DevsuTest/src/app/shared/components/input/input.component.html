@@ -1,0 +1,35 @@
+<div
+  *ngIf="model && model.show"
+  [ngClass]="{
+    'input': true,
+    'isError': model.useCustomError || getErrorMessage(model.data).length > 0
+  }"
+>
+  <label>
+    <span>{{ model.label }}</span>
+    <input
+      type="{{ model.type ? model.type : 'text' }}"
+      placeholder="{{ model.placeholder }}"
+      [formControl]="model.data"
+      [maxLength]="defineMaxLenght()"
+      [minlength]="defineMinLenght()"
+      [readonly]="(model.readonly) ? model.readonly : false"
+    >
+  </label>
+  <div
+    *ngIf="!model.useCustomError && getErrorMessage(model.data).length > 0"
+    [ngClass]="{
+      'error': true
+    }"
+  >
+    {{ getErrorMessage(model.data)}}
+  </div>
+  <div
+    *ngIf="model.useCustomError"
+    [ngClass]="{
+      'error': true
+    }"
+  >
+    {{ model.errorMessage }}
+  </div>
+</div>

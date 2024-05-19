@@ -1,0 +1,77 @@
+<app-modal [model]="modalModel"></app-modal>
+<div class="view">
+  <div class="options">
+    <app-search-bar [model]="serachBarModel"></app-search-bar>
+    <app-buttom [model]="addButtomModel"></app-buttom>
+  </div>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Logo</th>
+          <th>
+            Nombre del producto
+            <mat-icon class="icon">info</mat-icon>
+          </th>
+          <th>
+            Descripción
+            <mat-icon class="icon">info</mat-icon>
+          </th>
+          <th>
+            Fecha de liberación
+            <mat-icon class="icon">info</mat-icon>
+          </th>
+          <th>
+            Fecha de reestructuración
+            <mat-icon class="icon">info</mat-icon>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of getPaginatedProductList()
+        ">
+          <td><img src="{{ item.logo }}" alt="log"></td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ formatDate(item.date_release) }}</td>
+          <td>{{ formatDate(item.date_revision) }}</td>
+          <td>
+            <app-drop-donw [model]="getDropDownById(item.id)"></app-drop-donw>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <div class="total-records">
+        {{ productList.length }} Resultados
+      </div>
+      <div class="paginate">
+        <div class="pages">
+          <mat-icon
+            [ngClass]="{
+              'icon': true,
+              'enable': this.currentPage > 1
+            }"
+            (click)="previousPage()"
+          >
+            chevron_left
+          </mat-icon>
+          <p>{{ currentPage }}</p>
+          <mat-icon
+            [ngClass]="{
+              'icon': true,
+              'enable': calculateIfMoreThatOnePageExist()
+            }"
+            (click)="nextPage()"
+          >
+            chevron_right
+          </mat-icon>
+        </div>
+        <app-select [model]="listSize"></app-select>
+      </div>
+    </div>
+  </div>
+</div>
+

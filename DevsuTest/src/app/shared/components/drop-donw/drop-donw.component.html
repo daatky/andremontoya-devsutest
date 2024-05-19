@@ -1,0 +1,28 @@
+<div
+  *ngIf="model && model.show"
+  class="dropdown"
+>
+  <mat-icon
+    (click)="showOptions()"
+    class="icon"
+  >
+    more_vert
+  </mat-icon>
+  <div
+    [ngClass]="{
+      'options': true,
+      'active': model.showOptions
+    }"
+  >
+    <div
+      *ngFor="let item of model.items"
+      class="option"
+      (click)="clicItem(item)"
+    >
+      {{ item.text }}
+    </div>
+  </div>
+</div>
+
+
+

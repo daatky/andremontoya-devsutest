@@ -1,0 +1,7 @@
+<div
+  *ngIf="model && model.show"
+  [ngClass]="getClasses()"
+>
+  <mat-icon class="icon">{{ model.iconName }}</mat-icon>
+  <p class="text">{{ model.text }}</p>
+</div>

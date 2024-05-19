@@ -1,0 +1,60 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$modal-width: 100vw;
+$modal-height: 100vh;
+$content-width: calculate(30);
+$content-height: calculate(15);
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: $modal-width;
+  height: $modal-height;
+  z-index: -1;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--semi-black);
+  transition: opacity ease 0.2s;
+  overflow: hidden;
+
+  &.show {
+    z-index: 999;
+    opacity: 1;
+  }
+
+  .content {
+    background-color: var(--white);
+    width: $content-width;
+    height: $content-height;
+    display: flex;
+    flex-flow: column;
+    border-radius: calculate(0.5);
+    box-shadow: --bottom-shadow-container;
+
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      border-bottom: var(--black) solid calculate(0.02);
+    }
+
+    .options {
+      height: calc( $content-height * 0.40 );
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+
+
+
+  }
+
+
+}

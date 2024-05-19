@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/page-size.scss';
+
+.searchbar {
+  width: calculate(20);
+  height: calculate(3);
+  display: flex;
+  flex-flow: row;
+  background: #fff;
+  border-radius: calculate(0.5);
+
+  input {
+    width: calculate(20);
+    height: calculate(3);
+    border: none;
+    border-radius: calculate(0.5);
+    padding: calculate(1) calculate(1);
+    font-size: calculate(1.05);
+    line-height: calculate(1.05);
+    outline: 0;
+
+    &:focus {
+      outline: var(--black) solid calculate(0.08);
+    }
+  }
+
+}

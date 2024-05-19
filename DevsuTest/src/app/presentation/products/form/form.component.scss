@@ -1,0 +1,75 @@
+@import '../../../../assets/styles/page-size.scss';
+
+$form-width: calculate(45);
+$form-height: calculate(35);
+$title-width: calculate(5);
+$inputs-pad-tb: calculate(1);
+$inputs-pad-lr: calculate(2);
+$row-input-width: calc( $form-width - ( $inputs-pad-lr * 2 ) );
+$buttoms-height: calculate(5);
+$form-padding-bottom: calculate(2);
+
+.form {
+  width: $form-width;
+  height: $form-height;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: $form-padding-bottom;
+
+  .title {
+    display: flex;
+    width: $form-width;
+    height: $title-width ;
+    border-bottom: var(--black) solid calculate(0.1);
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: calculate(1.6);
+      line-height: calculate(1.6);
+      font-weight: 500;
+    }
+  }
+
+  .inputs {
+    width: $form-width;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: $inputs-pad-tb $inputs-pad-lr;
+
+    .row {
+      width: $row-input-width;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-around;
+
+      .input-tag {
+        width: calc($row-input-width * 0.46);
+        display: flex;
+      }
+    }
+
+  }
+
+  .buttoms {
+    display: flex;
+    width: $form-width;
+    height: $buttoms-height;
+    align-items: center;
+    justify-content: center;
+
+    .buttom-tag {
+      margin: 0 calculate(3);
+    }
+  }
+
+}
